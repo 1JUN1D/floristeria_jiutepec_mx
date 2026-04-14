@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZRCE7Q2TV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0ZRCE7Q2TV');
+</script>
+
+<!-- Event snippet for WhatsApp_Contacto conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-18090168298/fkGRCL_flJwcEOqfiLJD'});
+</script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo floral completo en Jiutepec - Florería Amerixa. Rosas, girasoles, gerberas, bouquets, canastas, cajas florales, arreglos fúnebres y más. Entrega a domicilio.">
+    <meta name="keywords" content="floristeria jiutepec, catalogo flores, arreglos florales jiutepec, rosas, girasoles, gerberas, bouquets, canastas florales, arreglos funebres, flores a domicilio jiutepec">
+    <title>Catálogo Floral Completo - Florería Amerixa | Amerixas en Jiutepec</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Catálogo Floral - Florería Amerixa Jiutepec">
+    <meta property="og:description" content="Explora nuestro catálogo completo de arreglos florales, bouquets, canastas, cajas y más en Jiutepec. Entrega a domicilio.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://floreriajiutepec.dondeseria.com/catalogo-2">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/catalog.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.webp">
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section -->
+    <section class="catalog-hero">
+        <div class="container">
+            <h1>Catálogo Floral</h1>
+            <p>Explora nuestra colección completa de arreglos florales, bouquets, canastas, cajas y mucho más</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="catalog-filters">
+        <div class="container">
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" class="search-input" id="search-input" placeholder="Buscar ramos, rosas, girasoles, gerberas...">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <button class="search-clear" id="search-clear">&times;</button>
+            </div>
+            <div class="filters-container">
+                <span class="filter-label">Filtrar por:</span>
+                <button class="filter-btn active" data-filter="todos">Todos los Productos</button>
+                <button class="filter-btn" data-filter="ramos">Ramos</button>
+                <button class="filter-btn" data-filter="centros-mesa">Centros de Mesa</button>
+                <button class="filter-btn" data-filter="pedestales">Pedestales</button>
+                <button class="filter-btn" data-filter="corazones">Corazones</button>
+                <button class="filter-btn" data-filter="cajas">Cajas</button>
+                <button class="filter-btn" data-filter="coronas-funebres">Coronas Fúnebres</button>
+                <button class="filter-btn" data-filter="especiales">Especiales</button>
+                <button class="filter-btn" data-filter="decoracion">Decoración</button>
+                <button class="filter-btn" data-filter="precio-bajo">Menos de $1,000</button>
+                <button class="filter-btn" data-filter="precio-medio">$1,000 - $2,500</button>
+                <button class="filter-btn" data-filter="precio-alto">Más de $2,500</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Counter -->
+    <div class="results-counter">
+        <div class="container">
+            Mostrando <strong id="results-count">16</strong> productos
+        </div>
+    </div>
+
+    <!-- Products Grid -->
+    <section class="catalog-section">
+        <div class="container">
+            <div class="products-grid" id="products-grid">
+                <!-- Los productos se generarán aquí -->
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="empty-state">
+                <h3>No se encontraron productos</h3>
+                <p>Intenta con otro filtro para ver más opciones</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close">×</button>
+            <img src="" alt="" class="lightbox-image" id="lightbox-image">
+            <div class="lightbox-info">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-price"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scroll-top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- WhatsApp Button -->
+    <div id="whatsapp-button-container"></div>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script>
+        // Datos de productos - Catálogo Floral Completo
+const products = [
+    {
+        id: 1,
+        name: "Ramo Azul Cielo con Girasol y Lilies",
+        price: 500,
+        image: "assets/foto1.webp",
+        description: "Ramo en papel azul cielo y blanco con girasol, lilies orientales, rosas rojas, alstroemeria rosa, perrito, mini rosas spray, aster morado y solidago.",
+        categories: ["ramos", "precio-bajo"]
+    },
+    {
+        id: 2,
+        name: "Ramo Azul con Gerberas y Girasol",
+        price: 438,
+        image: "assets/foto2.webp",
+        description: "Ramo en papel azul cielo con gerberas rojas, girasol, rosas rojas, aster morado, gypsophila y solidago. Moño de rafia roja.",
+        categories: ["ramos", "precio-bajo"]
+    },
+    {
+        id: 3,
+        name: "Ramo Verde Olivo con Lilies Orientales",
+        price: 350,
+        image: "assets/foto3.webp",
+        description: "Ramo en papel verde olivo con lilies orientales rosas y amarillos, gypsophila, statice morado, solidago y helecho.",
+        categories: ["ramos", "precio-bajo"]
+    },
+    {
+        id: 4,
+        name: "Ramo Rosa y Fucsia con Rosas",
+        price: 375,
+        image: "assets/foto4.webp",
+        description: "Ramo en doble papel rosa y fucsia con rosas rosas, alstroemeria, mini rosas spray, crisantemos blancos y gypsophila.",
+        categories: ["ramos", "precio-bajo"]
+    },
+    {
+        id: 5,
+        name: "Ramo Rojo con Gerberas Multicolor",
+        price: 313,
+        image: "assets/foto5.webp",
+        description: "Ramo en papel rojo con gerberas multicolor (rojas, fucsias, amarillas, naranjas, blancas), gypsophila y aster morado.",
+        categories: ["ramos", "precio-bajo"]
+    },
+    {
+        id: 6,
+        name: "Ramo Lila con Rosas Fiusha",
+        price: 375,
+        image: "assets/foto6.webp",
+        description: "Ramo en papel lila con rosas fiusha, gerbera blanca, aster morado, gypsophila, solidago y eucalipto.",
+        categories: ["ramos", "precio-bajo"]
+    },
+    {
+        id: 7,
+        name: "Ramo Rosa Pastel con Lilies en Botón",
+        price: 438,
+        image: "assets/foto7.webp",
+        description: "Ramo en papel rosa pastel con lilies orientales en botón, margaritas blancas, aster morado, mini rosas spray y gypsophila rosa.",
+        categories: ["ramos", "precio-bajo"]
+    },
+    {
+        id: 8,
+        name: "Ramo Grande Verde Salvia con Girasol",
+        price: 500,
+        image: "assets/foto8.webp",
+        description: "Ramo grande en papel verde salvia con girasol, gerbera fucsia, lily oriental rosa, gerbera blanca, mini rosas spray y gypsophila.",
+        categories: ["ramos", "precio-bajo"]
+    },
+    {
+        id: 9,
+        name: "Ramo Elegante Negro con Borde Dorado",
+        price: 563,
+        image: "assets/foto9.webp",
+        description: "Ramo elegante en papel negro con borde dorado, gerberas multicolor, lilies amarillos, perrito rosa salmón, rosas rosas y aster morado.",
+        categories: ["ramos", "precio-bajo"]
+    },
+    {
+        id: 10,
+        name: "Ramo Delicado Rosa con Lilies Blancos",
+        price: 563,
+        image: "assets/foto10.webp",
+        description: "Ramo delicado en papel rosa pastel con lilies blancos, gerberas blancas, rosas rosas, aster lila, gypsophila y follaje de viburno.",
+        categories: ["ramos", "precio-bajo"]
+    },
+    {
+        id: 11,
+        name: "Ramo Rojo y Rosa con Eucalipto",
+        price: 500,
+        image: "assets/foto11.webp",
+        description: "Ramo en doble papel rojo y rosa con gerberas rojas y rosas, rosas rojas y rosas, eucalipto plateado y ramas de bupleurum.",
+        categories: ["ramos", "precio-bajo"]
+    },
+    {
+        id: 12,
+        name: "Centro de Mesa Rosa con Lilies",
+        price: 750,
+        image: "assets/foto12.webp",
+        description: "Arreglo redondo tipo centro de mesa en tonos rosas con lilies orientales, gerberas rosas y coral, rosas, crisantemos morados y gypsophila.",
+        categories: ["centros-mesa", "precio-bajo"]
+    },
+    {
+        id: 13,
+        name: "Centro de Mesa Clásico Rosas Blancas",
+        price: 4375,
+        image: "assets/foto13.webp",
+        description: "Arreglo redondo tipo centro de mesa con rosas blancas, gypsophila abundante, aster morado y follaje variado. Estilo clásico y elegante.",
+        categories: ["centros-mesa", "premium", "precio-alto"]
+    },
+    {
+        id: 14,
+        name: "Pedestal Triangular con Girasoles",
+        price: 2500,
+        image: "assets/foto14.webp",
+        description: "Arreglo alto tipo pedestal triangular con girasoles, lilies blancos y rosas, gerberas multicolor, margaritas y abundante follaje de palma.",
+        categories: ["pedestales", "precio-medio"]
+    },
+    {
+        id: 15,
+        name: "Pedestal Triangular con Lilies Rosas",
+        price: 2500,
+        image: "assets/foto15.webp",
+        description: "Arreglo alto tipo pedestal triangular con lilies orientales rosas, rosas fiusha, gerberas blancas y rosas, gypsophila y follaje de palma.",
+        categories: ["pedestales", "precio-medio"]
+    },
+    {
+        id: 16,
+        name: "Pedestal con Girasoles Protagonistas",
+        price: 2875,
+        image: "assets/foto16.webp",
+        description: "Arreglo tipo pedestal con girasoles como protagonistas, rosas rojas, gypsophila, eucalipto plateado y follaje de palma.",
+        categories: ["pedestales", "precio-alto"]
+    },
+    {
+        id: 17,
+        name: "Arreglo Escultural Rosas y Lilies",
+        price: 1250,
+        image: "assets/foto17.webp",
+        description: "Arreglo escultural con rosas rojas en forma curva ascendente, lilies blancos y rosas al centro, gypsophila y hojas de palma abanico.",
+        categories: ["pedestales", "precio-medio"]
+    },
+    {
+        id: 18,
+        name: "Cofre de Madera con Rosas Rojas",
+        price: 3125,
+        image: "assets/foto18.webp",
+        description: "Cofre de madera gris con rosas rojas en filas uniformes. Tapa grabada con dedicatoria especial. Presentación tipo caja regalo romántica.",
+        categories: ["cajas", "precio-alto"]
+    },
+    {
+        id: 19,
+        name: "Caja Cumpleaños con Girasoles y Chocolates",
+        price: 3250,
+        image: "assets/foto19.webp",
+        description: "Caja negra con corazones, rosas rojas y girasoles, globo de Feliz Cumpleaños y chocolates Ferrero Rocher. Arreglo de celebración.",
+        categories: ["cajas", "especiales", "precio-alto"]
+    },
+    {
+        id: 20,
+        name: "Pedestal Rosa con Lilies y Gypsophila",
+        price: 750,
+        image: "assets/foto20.webp",
+        description: "Arreglo alto tipo pedestal triangular con rosas rosas, lilies orientales rosas, gypsophila abundante y hojas de palma abanico. Tonalidad rosa.",
+        categories: ["pedestales", "precio-bajo"]
+    },
+    {
+        id: 21,
+        name: "Arreglo Escultural Alto con Chocolates",
+        price: 5000,
+        image: "assets/foto21.webp",
+        description: "Arreglo escultural alto con rosas rojas y bicolor en línea curva, gerberas rojas y naranjas, girasoles y chocolates Ferrero Rocher.",
+        categories: ["especiales", "premium", "precio-alto"]
+    },
+    {
+        id: 22,
+        name: "Corazón de Rosas Rojas y Blancas",
+        price: 3125,
+        image: "assets/foto22.webp",
+        description: "Arreglo en forma de corazón con rosas rojas y blancas, diseño de corazón dentro de corazón. Base de hojas verdes.",
+        categories: ["corazones", "precio-alto"]
+    },
+    {
+        id: 23,
+        name: "Tapete Floral Ovalado de Rosas Rojas",
+        price: 6000,
+        image: "assets/foto23.webp",
+        description: "Arreglo ovalado grande con rosas rojas en filas, gypsophila blanca y hojas de palma verde. Estilo tipo tapete floral compacto.",
+        categories: ["especiales", "premium", "precio-alto"]
+    },
+    {
+        id: 24,
+        name: "Pedestal Triangular Girasoles y Rosas",
+        price: 1875,
+        image: "assets/foto24.webp",
+        description: "Arreglo alto tipo pedestal triangular con girasoles en la cima, lilies blancos al centro, rosas rojas, margaritas y solidago.",
+        categories: ["pedestales", "precio-medio"]
+    },
+    {
+        id: 25,
+        name: "Domo Monumental Rosas Rojas y Lilies",
+        price: 6250,
+        image: "assets/foto25.webp",
+        description: "Arreglo monumental redondo con rosas rojas y lilies blancos como acento lateral. Forma de domo muy compacto y voluminoso.",
+        categories: ["especiales", "premium", "precio-alto"]
+    },
+    {
+        id: 26,
+        name: "Corona Fúnebre Colorida Crisantemos",
+        price: 3125,
+        image: "assets/foto26.webp",
+        description: "Corona fúnebre circular con crisantemos amarillos y morados, lilies amarillos, rosas rosas, mini rosas spray y gypsophila. Base de palma.",
+        categories: ["coronas-funebres", "precio-alto"]
+    },
+    {
+        id: 27,
+        name: "Corona Fúnebre Grande con Girasoles",
+        price: 6250,
+        image: "assets/foto27.webp",
+        description: "Corona fúnebre circular en tripié, muy colorida, con girasoles, rosas, crisantemos, gerberas, claveles naranjas y hojas de palma abanico.",
+        categories: ["coronas-funebres", "premium", "precio-alto"]
+    },
+    {
+        id: 28,
+        name: "Corona Fúnebre Tricolor",
+        price: 2500,
+        image: "assets/foto28.webp",
+        description: "Corona fúnebre circular con franjas de crisantemos blancos y claveles rojos, lilies naranjas y amarillos, gerberas y gypsophila.",
+        categories: ["coronas-funebres", "precio-medio"]
+    },
+    {
+        id: 29,
+        name: "Corona Fúnebre con Cabeceras de Lilies",
+        price: 3125,
+        image: "assets/foto29.webp",
+        description: "Corona fúnebre circular con franjas de crisantemos blancos, claveles rojos y crisantemos amarillos. Cabeceras con lilies y margaritas.",
+        categories: ["coronas-funebres", "precio-alto"]
+    },
+    {
+        id: 30,
+        name: "Corona Fúnebre Blanca con Acentos Rojos",
+        price: 3125,
+        image: "assets/foto30.webp",
+        description: "Corona fúnebre circular blanca con acentos de claveles rojos y crisantemos amarillos. Cabeceras con lilies amarillos y rosas rojas.",
+        categories: ["coronas-funebres", "precio-alto"]
+    },
+    {
+        id: 31,
+        name: "Corona Fúnebre Completamente Blanca",
+        price: 3750,
+        image: "assets/foto31.webp",
+        description: "Corona fúnebre circular completamente blanca con crisantemos, margaritas, lilies blancos y gypsophila. Estilo sobrio y elegante.",
+        categories: ["coronas-funebres", "precio-alto"]
+    },
+    {
+        id: 32,
+        name: "Corazón Abierto Cumpleaños con Chocolates",
+        price: 4750,
+        image: "assets/foto32.webp",
+        description: "Arreglo en forma de corazón abierto con rosas rosas, gypsophila, letrero Feliz Cumple, girasoles y chocolates Ferrero Rocher.",
+        categories: ["corazones", "especiales", "precio-alto"]
+    },
+    {
+        id: 33,
+        name: "Corazón Te Amo Crisantemos y Claveles",
+        price: 2500,
+        image: "assets/foto33.webp",
+        description: "Arreglo en forma de corazón con Te Amo en crisantemos blancos sobre claveles rojos. Borde de rosas rojas y gypsophila.",
+        categories: ["corazones", "precio-medio"]
+    },
+    {
+        id: 34,
+        name: "Corazón Abierto Grande Rosas y Lilies",
+        price: 7500,
+        image: "assets/foto34.webp",
+        description: "Arreglo grande en forma de corazón abierto con rosas rosas y blancas, lilies rosas, crisantemos lila, gypsophila y eucalipto.",
+        categories: ["corazones", "premium", "precio-alto"]
+    },
+    {
+        id: 35,
+        name: "Caja Corazón Lila con Chocolates",
+        price: 2750,
+        image: "assets/foto35.webp",
+        description: "Caja en forma de corazón lila con rosas rosas y fiusha, statice morado y chocolates Ferrero Rocher.",
+        categories: ["cajas", "precio-alto"]
+    },
+    {
+        id: 36,
+        name: "Caja Corazón Roja con Chocolates",
+        price: 3125,
+        image: "assets/foto36.webp",
+        description: "Caja en forma de corazón roja con rosas rosas y fiusha, statice morado y chocolates Ferrero Rocher.",
+        categories: ["cajas", "precio-alto"]
+    },
+    {
+        id: 37,
+        name: "Caja Corazón Negra de Rosas Rojas",
+        price: 3750,
+        image: "assets/foto37.webp",
+        description: "Caja en forma de corazón negra con moño rojo, llena de rosas rojas compactas y uniformes. Presentación lujosa.",
+        categories: ["cajas", "premium", "precio-alto"]
+    },
+    {
+        id: 38,
+        name: "Arreglo con Osito y Globos",
+        price: 2000,
+        image: "assets/foto38.webp",
+        description: "Arreglo en base de mimbre con arco de eucalipto, burbuja transparente con osito tejido y globos rosas. Base con lilies rosas, rosas lila y gypsophila.",
+        categories: ["especiales", "precio-medio"]
+    },
+    {
+        id: 39,
+        name: "Cruz Fúnebre de Claveles Blancos",
+        price: 750,
+        image: "assets/foto39.webp",
+        description: "Cruz fúnebre de claveles blancos/crema con rosas rojas y gypsophila al centro. Base de hojas de palma. Estilo solemne. Disponible en: Chica $750 | Mediana $1,063 | Grande $1,438.",
+        categories: ["coronas-funebres", "precio-bajo"]
+    },
+    {
+        id: 40,
+        name: "Centro de Mesa Girasoles y Lilies",
+        price: 500,
+        image: "assets/foto40.webp",
+        description: "Centro de mesa con girasoles, lily blanco, rosas blancas, gypsophila y solidago. Tonalidad blanca y amarilla, fresco y luminoso.",
+        categories: ["centros-mesa", "precio-bajo"]
+    },
+    {
+        id: 41,
+        name: "Centro de Mesa con Pecera Rosa Pastel",
+        price: 750,
+        image: "assets/foto41.webp",
+        description: "Centro de mesa con pecera. Arreglo redondo bajo en tonos rosa pastel con rosas, gerberas, crisantemos, gypsophila y eucalipto.",
+        categories: ["centros-mesa", "precio-bajo"]
+    },
+    {
+        id: 42,
+        name: "Topiario de Alstroemeria",
+        price: 225,
+        image: "assets/foto42.webp",
+        description: "Centro de mesa con alstroemeria. Topiario con alstroemeria rosa en la parte superior y base de lilies blancos, gypsophila y aspidistra.",
+        categories: ["centros-mesa", "precio-bajo"]
+    },
+    {
+        id: 43,
+        name: "Centro de Mesa Hortensia y Rosas",
+        price: 1000,
+        image: "assets/foto43.webp",
+        description: "Centro de mesa con hortensia y rosas en florero craquelado (tonos plata, dorado y rosa). Incluye delphiniums azules, crisantemos amarillos y follaje.",
+        categories: ["centros-mesa", "precio-medio"]
+    },
+    {
+        id: 44,
+        name: "Bouquet Sorpresa con Corazón de Gypsophila",
+        price: 625,
+        image: "assets/foto44.webp",
+        description: "Ramo con dedicatoria sorpresa. Bouquet con corazón central de gypsophila, rodeado de lilies rosas, crisantemos, alstroemeria y aster morado.",
+        categories: ["ramos", "precio-bajo"]
+    },
+    {
+        id: 45,
+        name: "Ramo 5 Docenas Rosas Durazno",
+        price: 2500,
+        image: "assets/foto45.webp",
+        description: "Ramo rosa hermosa, 5 docenas con malla y papel coreano. Rosas color durazno/nude en forma redonda y compacta, adornado con collar de perlas.",
+        categories: ["ramos", "premium", "precio-medio"]
+    },
+    {
+        id: 46,
+        name: "Mini Bouquet de Girasol",
+        price: 125,
+        image: "assets/foto46.webp",
+        description: "Pieza de girasol. Bouquet pequeño con girasol, gypsophila rosa y helecho, envuelto en papel beige con moño rosa.",
+        categories: ["ramos", "precio-bajo"]
+    },
+    {
+        id: 47,
+        name: "Arreglo Hortensia y Rosas en Cerámica",
+        price: 1125,
+        image: "assets/foto47.webp",
+        description: "Arreglo con hortensia y rosas en base cilíndrica de cerámica. Rosas salmón, hortensia azul, crisantemo lila, perritos y liatris morada.",
+        categories: ["especiales", "precio-medio"]
+    },
+    {
+        id: 48,
+        name: "Arreglo de Graduación con Globo",
+        price: 563,
+        image: "assets/foto48.webp",
+        description: "Arreglo para graduación con globo personalizado. Base de girasoles, rosas amarillas, gypsophila y trigo seco.",
+        categories: ["especiales", "precio-bajo"]
+    },
+    {
+        id: 49,
+        name: "Arreglo Flores con Maquillaje y Skincare",
+        price: 1875,
+        image: "assets/foto49.webp",
+        description: "Arreglo con flores, mascarillas y maquillaje. Rosas rosas, fiusha y blancas con productos de belleza y skincare. Ideal como regalo.",
+        categories: ["especiales", "precio-medio"]
+    },
+    {
+        id: 50,
+        name: "Decoración Floral para Eventos",
+        price: 0,
+        image: "assets/foto50.webp",
+        description: "Servicio de decoración floral para eventos, bodas y celebraciones. Incluye centros de mesa, caminos florales, arreglos de piso y ambientación completa. Cotización personalizada.",
+        categories: ["decoracion"]
+    },
+    {
+        id: 51,
+        name: "Decoración Floral para Bodas",
+        price: 0,
+        image: "assets/foto51.webp",
+        description: "Decoración floral para bodas con estilo elegante y romántico. Tonalidades en blancos, verdes y cremas con eucalipto, rosas blancas, hortensias y lisianthus. Cotización personalizada.",
+        categories: ["decoracion"]
+    },
+    {
+        id: 52,
+        name: "Centros de Mesa Altos para Eventos",
+        price: 0,
+        image: "assets/foto52.webp",
+        description: "Centros de mesa altos y bajos para eventos y celebraciones. Diseños con gladiolas, gypsophila, rosas y follaje natural. Se adapta a espacios interiores y jardines. Cotización personalizada.",
+        categories: ["decoracion"]
+    },
+    {
+        id: 53,
+        name: "Caminos de Mesa Florales",
+        price: 0,
+        image: "assets/foto53.webp",
+        description: "Caminos de mesa florales para banquetes y recepciones. Eucalipto, rosas blancas, hortensias y velas decorativas. Estilo elegante y sofisticado. Cotización personalizada.",
+        categories: ["decoracion"]
+    },
+    {
+        id: 54,
+        name: "Arreglos de Piso con Velas",
+        price: 0,
+        image: "assets/foto54.webp",
+        description: "Arreglos florales de piso con velas para ceremonias y eventos especiales. Diseños románticos adaptados a haciendas y jardines. Cotización personalizada.",
+        categories: ["decoracion"]
+    },
+    {
+        id: 55,
+        name: "Bouquet de Novia",
+        price: 0,
+        image: "assets/foto55.webp",
+        description: "Bouquet de novia personalizado con rosas blancas, lisianthus, eucalipto y gypsophila. Diseño romántico y sofisticado para el día más especial. Cotización personalizada.",
+        categories: ["decoracion"]
+    },
+    {
+        id: 56,
+        name: "Ambientación Floral Completa",
+        price: 0,
+        image: "assets/foto56.webp",
+        description: "Servicio completo de ambientación floral para eventos. Incluye todo: centros de mesa, caminos florales, arreglos de piso, bouquet de novia y decoración integral. Cotización personalizada.",
+        categories: ["decoracion"]
+    }
+];
+        // Normalizar texto (quitar tildes y minúsculas)
+        function normalize(str) {
+            return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+        }
+
+        // Estado global de búsqueda y filtro
+        let currentFilter = 'todos';
+        let currentSearch = '';
+
+        // Renderizar productos
+        function renderProducts(filter, search) {
+            if (filter !== undefined) currentFilter = filter;
+            if (search !== undefined) currentSearch = search;
+
+            const grid = document.getElementById('products-grid');
+            const emptyState = document.getElementById('empty-state');
+            const resultsCount = document.getElementById('results-count');
+
+            let filteredProducts = products;
+
+            // Aplicar filtro de categoría
+            if (currentFilter !== 'todos') {
+                filteredProducts = filteredProducts.filter(product =>
+                    product.categories.includes(currentFilter)
+                );
+            }
+
+            // Aplicar búsqueda de texto
+            if (currentSearch.trim() !== '') {
+                const searchNorm = normalize(currentSearch.trim());
+                const searchWords = searchNorm.split(/\s+/);
+                filteredProducts = filteredProducts.filter(product => {
+                    const text = normalize(product.name + ' ' + product.description + ' ' + product.categories.join(' '));
+                    return searchWords.every(word => text.includes(word));
+                });
+            }
+
+            if (filteredProducts.length === 0) {
+                grid.style.display = 'none';
+                emptyState.classList.add('active');
+                resultsCount.textContent = '0';
+                return;
+            }
+
+            grid.style.display = 'grid';
+            emptyState.classList.remove('active');
+            resultsCount.textContent = filteredProducts.length;
+
+            // Intercalar productos para variedad visual
+            if (currentFilter === 'todos' && currentSearch.trim() === '') {
+                const funebre = filteredProducts.filter(p => p.categories.includes('funebre'));
+                const noFunebre = filteredProducts.filter(p => !p.categories.includes('funebre'));
+
+                // Agrupar no-fúnebres por categoría principal
+                const categoryGroups = {};
+                const categoryOrder = ['ramos', 'centros-mesa', 'pedestales', 'corazones', 'cajas', 'coronas-funebres', 'especiales', 'decoracion', 'premium'];
+
+                noFunebre.forEach(p => {
+                    const mainCat = categoryOrder.find(c => p.categories.includes(c)) || 'otros';
+                    if (!categoryGroups[mainCat]) categoryGroups[mainCat] = [];
+                    categoryGroups[mainCat].push(p);
+                });
+
+                // Intercalar por precio dentro de cada grupo (alto-bajo-alto-bajo)
+                Object.values(categoryGroups).forEach(group => {
+                    group.sort((a, b) => a.price - b.price);
+                    const temp = [];
+                    let lo = 0, hi = group.length - 1;
+                    let pickHigh = true;
+                    while (lo <= hi) {
+                        if (pickHigh) { temp.push(group[hi--]); }
+                        else { temp.push(group[lo++]); }
+                        pickHigh = !pickHigh;
+                    }
+                    group.length = 0;
+                    group.push(...temp);
+                });
+
+                // Round-robin intercalado
+                const interleaved = [];
+                const activeCats = categoryOrder.filter(c => categoryGroups[c] && categoryGroups[c].length > 0);
+                if (categoryGroups['otros'] && categoryGroups['otros'].length > 0) activeCats.push('otros');
+
+                let maxLen = Math.max(...activeCats.map(c => categoryGroups[c].length));
+                for (let i = 0; i < maxLen; i++) {
+                    for (const cat of activeCats) {
+                        if (categoryGroups[cat] && i < categoryGroups[cat].length) {
+                            interleaved.push(categoryGroups[cat][i]);
+                        }
+                    }
+                }
+
+                // Añadir fúnebres al final
+                filteredProducts = [...interleaved, ...funebre];
+            }
+
+            grid.innerHTML = filteredProducts.map(product => `
+                <div class="product-card" data-categories="${product.categories.join(' ')}">
+                    <div class="product-image-container" onclick="openLightbox('${product.image}', '${product.name}', '${formatPrice(product.price)}')">
+                        <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy">
+                        <div class="zoom-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="m21 21-4.35-4.35"/>
+                                <line x1="11" y1="8" x2="11" y2="14"/>
+                                <line x1="8" y1="11" x2="14" y2="11"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">${product.name}</h3>
+                        <div class="product-description">${product.description}</div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="price-label">Desde</span>
+                                <div class="product-price">${formatPrice(product.price)}</div>
+                            </div>
+                            <a href="https://wa.me/5217771626940?text=Hola,%20me%20interesa%20el%20producto:%20${encodeURIComponent(product.name)}%20-%20${formatPrice(product.price)}"
+                               class="btn-order"
+                               target="_blank">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                                </svg>
+                                Pedir Ahora
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Formatear precio
+        function formatPrice(price) {
+            if (price === 0) return 'Cotización';
+            return '$' + price.toLocaleString('es-MX');
+        }
+
+        // Filtros
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                renderProducts(this.dataset.filter);
+                window.scrollTo({ top: 400, behavior: 'smooth' });
+            });
+        });
+
+        // Búsqueda
+        const searchInput = document.getElementById('search-input');
+        const searchClear = document.getElementById('search-clear');
+        let searchTimeout;
+
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            const val = this.value;
+            searchClear.classList.toggle('visible', val.length > 0);
+            searchTimeout = setTimeout(() => {
+                renderProducts(undefined, val);
+            }, 250);
+        });
+
+        searchClear.addEventListener('click', function() {
+            searchInput.value = '';
+            searchClear.classList.remove('visible');
+            renderProducts(undefined, '');
+            searchInput.focus();
+        });
+
+        // Lightbox
+        function openLightbox(image, name, price) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxTitle = document.getElementById('lightbox-title');
+            const lightboxPrice = document.getElementById('lightbox-price');
+
+            lightboxImage.src = image;
+            lightboxImage.alt = name;
+            lightboxTitle.textContent = name;
+            lightboxPrice.textContent = price;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) closeLightbox();
+        });
+
+        // Scroll to top
+        const scrollTop = document.getElementById('scroll-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        scrollTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Inicializar
+        renderProducts();
+    </script>
+</body>
+</html>
