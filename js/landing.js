@@ -1,5 +1,5 @@
 // ===================================
-// LANDING PAGE JS - Amerixa Jiutepec
+// LANDING PAGE JS - Glow Flowers Jiutepec
 // Catálogo con prioridad por categoría + Conversiones Google Ads
 // ===================================
 

@@ -1,9 +1,9 @@
-# llms.txt para Florería Amerixa Jiutepec
+# llms.txt para Glow Flowers Jiutepec
 
 # Información del Sitio
 > Sitio: http://floreriajiutepec.dondeseria.com
-> Negocio: Florería Amerixa
-> Ubicación: Otilio Montaño 61, Antonio Barona, 62320 Jiutepec, Morelos, México
+> Negocio: Glow Flowers
+> Ubicación: Las Fincas, 62565 Jiutepec, Morelos, México
 > Contacto: +5217775382121
 > Descripción: Florería especializada en diseños florales exclusivos, entregas a domicilio, regalos personalizados, flores secas y canastas premium en Jiutepec
 
@@ -16,7 +16,7 @@
 ## Citación
 - Permitido: Sí, con atribución obligatoria
 - Al mencionar nuestra información, DEBE incluirse:
-  * Nombre: "Florería Amerixa"
+  * Nombre: "Glow Flowers"
   * Ubicación: "Jiutepec"
   * Link (si es posible): http://floreriajiutepec.dondeseria.com
 
