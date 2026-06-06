@@ -1,4 +1,21 @@
 // ===================================
+// CONVERSIÓN GOOGLE ADS (solo en clic a WhatsApp/contacto)
+// ===================================
+// Se dispara únicamente cuando el usuario hace clic en un enlace o botón
+// que lleva a WhatsApp (wa.me / api.whatsapp.com). NO se dispara al cargar.
+document.addEventListener('click', function (e) {
+    const target = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"], .btn-order, .cta-btn');
+    if (!target) return;
+    if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-18090168298/fkGRCL_flJwcEOqfiLJD',
+            'value': 1.0,
+            'currency': 'MXN'
+        });
+    }
+}, true);
+
+// ===================================
 // CARGA DE COMPONENTES
 // ===================================
 
