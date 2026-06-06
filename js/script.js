@@ -6,7 +6,10 @@
 document.addEventListener('click', function (e) {
     const target = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"], .btn-order, .cta-btn');
     if (!target) return;
-    if (typeof gtag === 'function') {
+    // Usar la funcion del Event Snippet (gtag_report_conversion) definida en el HTML.
+    if (typeof gtag_report_conversion === 'function') {
+        gtag_report_conversion();
+    } else if (typeof gtag === 'function') {
         gtag('event', 'conversion', {
             'send_to': 'AW-18090168298/fkGRCL_flJwcEOqfiLJD',
             'value': 1.0,
