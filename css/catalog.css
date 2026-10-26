@@ -630,3 +630,32 @@
     width: 24px;
     height: 24px;
 }
+
+
+/* ===================================
+   NOTA: MODELOS SOBRE PEDIDO
+   =================================== */
+.order-notice {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    background: #f8f2f7;
+    border-left: 4px solid var(--catalog-secondary);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin: 0 0 2rem;
+    color: var(--catalog-primary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.order-notice-icon { font-size: 1.25rem; line-height: 1.4; }
+.order-notice p { margin: 0; }
+.product-note {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--catalog-primary);
+    background: #f8f2f7;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    margin: 0 0 1rem;
+}

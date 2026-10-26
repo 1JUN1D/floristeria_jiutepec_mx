@@ -184,6 +184,7 @@ function renderProducts(filters = [], limit = null) {
                 <div class="product-info">
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
+                    <div class="product-note">📌 Algunos modelos son sobre pedido y ciertas variedades o colores de flor se deben programar con anticipación.</div>
                     <div class="product-footer">
                         <span class="price">${formatCOP(product.price)}</span>
                         <button class="btn-order" onclick="orderWA('${escapedName}', '${product.price}')">
